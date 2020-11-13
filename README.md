@@ -1,2 +1,0 @@
-# blog_pessoal
-Generation 

@@ -16,8 +16,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Entity
 @Table(name = "postagem")
 public class Postagem {	
-	
-	
+		
 		//criando o id como chave primaria e auto_incremento
 		@Id
 		@GeneratedValue(strategy = GenerationType.IDENTITY)

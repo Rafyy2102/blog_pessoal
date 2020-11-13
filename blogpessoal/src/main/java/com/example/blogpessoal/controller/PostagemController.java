@@ -21,7 +21,7 @@ import com.example.blogpessoal.repository.PostagemRepository;
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class PostagemController {
 	
-	//responsabilidade de intanciar fica com o spring
+	//responsabilidade de instanciar fica com o spring
 	@Autowired
 	private PostagemRepository repository;
 	

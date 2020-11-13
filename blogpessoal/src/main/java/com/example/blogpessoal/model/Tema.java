@@ -24,11 +24,11 @@ public class Tema {
 	@NotNull
 	private String descricao;
 		
-	//trazendo uma postagem para varios temas, mapeando o tema para ser um em baixo do outro e organizado e para não ter a recursividade 
+	/*trazendo uma postagem para varios temas, mapeando o tema para ser um em 
+	baixo do outro e organizado e para não ter a recursividade*/
 	@OneToMany(mappedBy = "tema", cascade = CascadeType.ALL)	
 	@JsonIgnoreProperties("tema")
 	private List<Postagem> postagem;		
-	
 	
 	//GETTERS E SETTERS
 	public long getId() {return id;}
