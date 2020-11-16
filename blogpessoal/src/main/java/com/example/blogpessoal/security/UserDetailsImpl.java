@@ -1,6 +1,7 @@
 package com.example.blogpessoal.security;
 
 import java.util.Collection;
+import java.util.List;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import com.example.blogpessoal.model.Usuario;
@@ -13,11 +14,13 @@ public class UserDetailsImpl implements UserDetails{
 	//atributos privados
 	private String userName;
 	private String password;
+	private List<GrantedAuthority> authorities;
 	
 	//contrutor de classe usando os paramentros userName e passWord e popular
 	public UserDetailsImpl (Usuario user) {
 		this.userName = user.getUsuario();
 		this.password = user.getSenha();
+		
 	}
 
 	//construtor vazio
@@ -26,7 +29,7 @@ public class UserDetailsImpl implements UserDetails{
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		// TODO Auto-generated method stub
-		return null;
+		return authorities;
 	}
 
 	@Override

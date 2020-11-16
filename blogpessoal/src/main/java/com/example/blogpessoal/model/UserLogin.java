@@ -7,6 +7,7 @@ public class UserLogin {
 	private String senha;
 	//chave de acesso para o usuario
 	private String token;
+	
 	public String getNome() {return nome;}
 	public void setNome(String nome) {this.nome = nome;}
 	public String getUsuario() {return usuario;}
