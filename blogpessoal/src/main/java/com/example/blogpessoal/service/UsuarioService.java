@@ -2,7 +2,6 @@ package com.example.blogpessoal.service;
 
 import java.nio.charset.Charset;
 import java.util.Optional;
-
 import org.apache.commons.codec.binary.Base64;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -19,16 +18,22 @@ public class UsuarioService {
 		private UsuarioRepository repository;
 		
 		//criando o metodo cadastros para receber um usuario
-		public Usuario CadastrarUsuario(Usuario usuario) {
+		public Optional<Usuario> CadastrarUsuario(Usuario usuario) {
+			
+			//valida e verifica se o usuario esta ok
+			if(repository.findByUsuario(usuario.getUsuario()).isPresent())
+				return null;
+			
 			//criptografar a senha do usuario
 			BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 			
 			//variavel string que recebe a senha do usuario
 			String senhaEncoder = encoder.encode(usuario.getSenha());
+			
 			//acessar e modificar a senha do usuario
 			usuario.setSenha(senhaEncoder);
 			
-			return repository.save(usuario);
+			return Optional.of(repository.save(usuario));
 		}
 		
 		//criando o metodo logar para receber um usuario

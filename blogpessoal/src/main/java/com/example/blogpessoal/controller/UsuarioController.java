@@ -46,13 +46,19 @@ public class UsuarioController {
 	@GetMapping("/{id}")
 	public ResponseEntity<Usuario> GetById(@PathVariable long id) {
 		return repository.findById(id).map(resp -> ResponseEntity.ok(resp)).orElse(ResponseEntity.notFound().build());
-	}
-	
+	}	
 	//endpoit Post
 	@PostMapping("/cadastrar")
 	public ResponseEntity<Usuario> Post(@RequestBody Usuario usuario){
-		return ResponseEntity.status(HttpStatus.CREATED).body(usuarioService.CadastrarUsuario(usuario));
+		//validação do usuario para salvar
+		Optional<Usuario> user = usuarioService.CadastrarUsuario(usuario);
+		try {
+			return ResponseEntity.ok(user.get());
+		} catch(Exception e){
+			return ResponseEntity.badRequest().build();
+		}
 	}
+	//endpoint Put
 	@PutMapping
 	public ResponseEntity<Usuario> Put(@RequestBody Usuario usuario) {
 		return ResponseEntity.ok(repository.save(usuario));
