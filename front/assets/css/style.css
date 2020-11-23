@@ -1,0 +1,62 @@
+/*Estilos da pagina index.html*/
+/*Definindo o texto onde ficar o texto*/
+.center {
+    text-align: center;
+}
+/*Definindo o texto onde ficar o texto*/
+.justify {
+    text-align: justify;
+}
+/*Definir a onde objeto imagen ficara na pagina */
+.container {
+    display: flex;
+    flex-flow: row-reverse;
+    justify-content: center;
+    align-items: center;
+}
+/*Colocar o menu na mesma linha e definir ser tamanho*/
+#menu li {
+    display: inline;
+    padding: 15px;    
+}
+/*Coloca cor na palavra referente ao menu*/
+#menu li a {
+    text-decoration: none;
+    color: black;  
+    font-size: 20px;  
+}
+/*colocar cor na palavra quando passar o maouse referente ao menu*/
+#menu li a:hover {
+    color: rgb(246, 10, 10);
+}
+/*Colocar espaço no texto*/
+.descricao {
+    padding: 30px;
+}
+/*Colocar tamanho e largura da imagen*/
+.imagen {
+    border-radius: 50%;
+    width: 250px;
+    height: 260px;
+}
+/*Colocar margin na inagem ao texto dentro do footer*/
+.m-20 {
+    margin-top: 4px;
+}
+/*Colocar tamanho para os simbolos das redes sociais */
+.tm-social {
+    width: 30px;
+    height: 30px;
+    padding: 10px;
+}
+/*Colocar margin da descrição ao footer*/
+.m-30 {
+    margin-top: 220px;
+}
+/*Estilos da pagina contato.html*/
+.mapa {
+    width: 250px;
+    height: 150px;
+    margin-top: -140px;
+    margin-left: 50px;
+}
