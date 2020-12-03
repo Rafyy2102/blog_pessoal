@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { faUser } from '@fortawesome/free-solid-svg-icons'
-import { faKey} from '@fortawesome/free-solid-svg-icons'
+import { faUser } from '@fortawesome/free-regular-svg-icons'
+
+
 
 
 @Component({
@@ -10,9 +11,7 @@ import { faKey} from '@fortawesome/free-solid-svg-icons'
 })
 export class LoginComponent implements OnInit {
 
-  fauser = faUser
-  fakey = faKey
-
+  faUser = faUser
   constructor() { }
 
   ngOnInit(): void {
