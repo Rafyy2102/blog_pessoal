@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { faUserAlt } from '@fortawesome/free-solid-svg-icons'
-import { faKey } from '@fortawesome/free-solid-svg-icons'
 import { UserLogin } from '../model/UserLogin';
 import { AuthService } from '../service/auth.service';
+
+import { faUserAlt } from '@fortawesome/free-solid-svg-icons'
+import { faKey } from '@fortawesome/free-solid-svg-icons'
+
 
 @Component({
   selector: 'app-login',
@@ -12,23 +14,24 @@ import { AuthService } from '../service/auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  userLogin: UserLogin = new UserLogin()
+  //userLogin: UserLogin = new UserLogin()
 
   faUserAlt = faUserAlt
   faKey = faKey
+
   constructor(
-    private authService: AuthService,
-    private router: Router
+    //private authService: AuthService,
+   // private router: Router
 
   ) { }
 
-  ngOnInit(){
+  ngOnInit(): void{
   }
-  
-  entrar() {
-    this.authService.logar(this.userLogin).subscribe((resp: any = UserLogin) => {
+
+  /*entrar() {
+    this.authService.logar(this.userLogin).subscribe((resp: UserLogin) => {
       this.userLogin = resp      
       this.router.navigate(['/feed'])
     })
-  }    
+  }  */   
 }

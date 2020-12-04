@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { faUser } from '@fortawesome/free-regular-svg-icons'
-import {faEnvelope} from '@fortawesome/free-regular-svg-icons'
-import { faKey } from '@fortawesome/free-solid-svg-icons'
-import { faLockOpen } from '@fortawesome/free-solid-svg-icons'
 import { User } from '../model/User';
 import { AuthService } from '../service/auth.service';
+
+import { faUser } from '@fortawesome/free-regular-svg-icons'
+import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
+import { faKey } from '@fortawesome/free-solid-svg-icons'
+import { faLockOpen } from '@fortawesome/free-solid-svg-icons'
+
 
 @Component({
   selector: 'app-cadastro',
@@ -15,8 +17,7 @@ import { AuthService } from '../service/auth.service';
 export class CadastroComponent implements OnInit {
 
   user: User = new User()
-  senha: string
-  
+  senha: string   
 
   faUser = faUser
   faEnvelope = faEnvelope
@@ -37,7 +38,7 @@ export class CadastroComponent implements OnInit {
 
   cadastrar(){
     if(this.senha === this.user.senha){
-     this.authService.cadastrar(this.user).subscribe((resp: any = User) =>{
+     this.authService.cadastrar(this.user).subscribe((resp: User) =>{
       this.user = resp
       this.router.navigate(['/login'])
       alert('Usuário cadastrado com sucesso!!')
