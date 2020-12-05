@@ -14,24 +14,24 @@ import { faKey } from '@fortawesome/free-solid-svg-icons'
 })
 export class LoginComponent implements OnInit {
 
-  //userLogin: UserLogin = new UserLogin()
+  userLogin: UserLogin = new UserLogin()
 
   faUserAlt = faUserAlt
   faKey = faKey
 
   constructor(
-    //private authService: AuthService,
-   // private router: Router
-
+    private authService: AuthService,
+    private router: Router
   ) { }
 
-  ngOnInit(): void{
+  ngOnInit(){
   }
 
-  /*entrar() {
+  entrar() {
     this.authService.logar(this.userLogin).subscribe((resp: UserLogin) => {
-      this.userLogin = resp      
+      this.userLogin = resp
+      localStorage.setItem('token', this.userLogin.token)      
       this.router.navigate(['/feed'])
     })
-  }  */   
+  }    
 }
