@@ -13,7 +13,6 @@ import { faKey } from '@fortawesome/free-solid-svg-icons'
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
   userLogin: UserLogin = new UserLogin()
 
   faUserAlt = faUserAlt

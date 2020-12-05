@@ -15,7 +15,6 @@ import { faLockOpen } from '@fortawesome/free-solid-svg-icons'
   styleUrls: ['./cadastro.component.css']
 })
 export class CadastroComponent implements OnInit {
-
   user: User = new User()
   senha: string   
 
@@ -38,7 +37,7 @@ export class CadastroComponent implements OnInit {
 
   cadastrar(){    
     if(this.senha === this.user.senha){
-     this.authService.cadastrar(this.user).subscribe((resp: User) =>{
+     this.authService.cadastrar(this.user).subscribe((resp: User) => {
       this.user = resp
       this.router.navigate(['/login'])
       alert('Usuário cadastrado com sucesso!!')
