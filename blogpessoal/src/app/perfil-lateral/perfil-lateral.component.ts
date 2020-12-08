@@ -6,11 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./perfil-lateral.component.css']
 })
 export class PerfilLateralComponent implements OnInit {
+<<<<<<< HEAD
    
   constructor() { }
 
   ngOnInit(){
    
+=======
+
+  constructor() { }
+
+  ngOnInit(): void {
+>>>>>>> 584b50bd109540b94073c5c187ac79d324993cfa
   }
 
 }
