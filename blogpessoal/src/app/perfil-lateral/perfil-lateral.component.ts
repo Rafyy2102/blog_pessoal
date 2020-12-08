@@ -12,5 +12,4 @@ export class PerfilLateralComponent implements OnInit {
   ngOnInit(){
    
   }
-
 }
