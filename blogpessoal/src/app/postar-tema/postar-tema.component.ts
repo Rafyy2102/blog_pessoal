@@ -12,7 +12,6 @@ export class PostarTemaComponent implements OnInit {
 
   tema: Tema = new Tema()
   listaTemas: Tema[]
-    
 
   constructor(
     private temaService: TemaService,
@@ -23,23 +22,24 @@ export class PostarTemaComponent implements OnInit {
     this.findAllTemas()
   }
 
-  findAllTemas(){
-    this .temaService.getAllTemas().subscribe((resp: Tema[]) => {
+  findAllTemas() {
+    this.temaService.getAllTemas().subscribe((resp: Tema[]) => {
       this.listaTemas = resp
     })
   }
 
-  findByIdTema(){
+  findByIdTema() {
     this.temaService.getByIdTema(this.tema.id).subscribe((resp: Tema | any) => {
-      this.tema = resp})
-  }  
-  
-  cadastrar(){
-    if(this.tema.descricao == null){
+      this.tema = resp
+    })
+  }
+
+  cadastrar() {
+    if (this.tema.descricao == null) {
       alert('Preencha o campo de nome do tema corretamente')
-    }else{
+    } else {
       this.temaService.postTema(this.tema).subscribe((resp: Tema) => {
-        this.tema = resp 
+        this.tema = resp
         this.router.navigate(['/feed'])
         alert('Tema cadastrado com sucesso!!!')
       })

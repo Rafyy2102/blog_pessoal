@@ -15,6 +15,10 @@ import { PerfilLateralComponent } from './perfil-lateral/perfil-lateral.componen
 import { LoginComponent } from './login/login.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { PostarTemaComponent } from './postar-tema/postar-tema.component';
+import { PutPostagemComponent } from './put-postagem/put-postagem.component';
+import { PutTemaComponent } from './put-tema/put-tema.component';
+import { DeleteTemaComponent } from './delete-tema/delete-tema.component';
+import { DeletePostagemComponent } from './delete-postagem/delete-postagem.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +30,11 @@ import { PostarTemaComponent } from './postar-tema/postar-tema.component';
     PerfilLateralComponent,
     LoginComponent,
     CadastroComponent,
-    PostarTemaComponent
+    PostarTemaComponent,
+    PutPostagemComponent,
+    PutTemaComponent,
+    DeleteTemaComponent,
+    DeletePostagemComponent
   ],
   imports: [
     BrowserModule,

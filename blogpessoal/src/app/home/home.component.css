@@ -7,12 +7,12 @@
     background-size: cover;
 }
 p {
-    background-color: rgba(240, 248, 255, 0.431);
-    color: rgb(0, 0, 0);    
-    font: italic small-caps 25px Georgia, serif;
-    text-align: justify;
-    width: auto;
-    padding: 2px;
-    line-height: 1.9;
-    text-indent: 4em;
+  background-color: rgba(240, 248, 255, 0.431);
+  color: rgb(0, 0, 0);    
+  font: italic small-caps 25px Georgia, serif;
+  text-align: justify;
+  width: auto;
+  padding: 2px;
+  line-height: 1.9;
+  text-indent: 4em;
 }
