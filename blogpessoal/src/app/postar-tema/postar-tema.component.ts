@@ -22,6 +22,7 @@ export class PostarTemaComponent implements OnInit {
 
   ngOnInit() {
     this.findAllTemas()
+    this.findByIdTema()
   }
 
   findAllTemas() {

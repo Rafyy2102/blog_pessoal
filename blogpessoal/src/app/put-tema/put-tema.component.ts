@@ -40,7 +40,7 @@ export class PutTemaComponent implements OnInit {
     }, err => {
       if (err.status = 400) {
         this.alert.showAlertWarning("Tema relacionada, não é possível edita-la!")
-        this.router.navigate(["/cadastro-tema"])
+        this.router.navigate(['/cadastro-tema'])
       }
     })
   }

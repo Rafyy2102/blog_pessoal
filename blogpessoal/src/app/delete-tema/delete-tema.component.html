@@ -1,26 +1,24 @@
 <div class="container">
 
   <div class="row mt-5 mb-5">
-    
-    <div class="col-md-4">
-      <app-perfil-lateral></app-perfil-lateral>
-    </div>
-
-    <div class="col-md-8">
-      <div class="card mt-5">
-
-        <div class="card-body">
-          <p class="card-text wd-10" aria-describedby="texto">{{tema.descricao}} </p>
-        </div>
+      <div class ="col-md-4">
+        <app-perfil-lateral></app-perfil-lateral>  
       </div>
+      <div class="col-md-8">
+          <div class="card mt-5">          
 
-      <hr class="mt-4 mb-4">
+              <div class="card-body">
+                  <p class="card-text" aria-describedby ="texto">{{tema.descricao}}</p> 
+              </div>
+          </div>
 
-      <h5 class="text-center">Tem certeza que deseja apagar esse Tema?</h5>
-      <div class="d-flex justify-content-center mt-5">
-        <button class="btn btn-outline-success mr-3" (click)="btnSim()">Sim</button>
-        <button class="btn btn-outline-danger" (click)="btnNao()">Não</button>
+          <hr class="mb-4 mt-4">
+
+          <h5 clas="text-center">Tem certeza que deseja excluir esse tema?</h5>
+          <div class="d-flex justify-content-center mt-5">
+              <button class="btn btn-outline-success mr-3" (click)="btnSim()">Sim</button>
+              <button class="btn btn-outline-danger" (click)="btnNao()">Não</button>
+          </div>
       </div>
-    </div>
   </div>
 </div>

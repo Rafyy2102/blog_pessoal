@@ -31,10 +31,15 @@ export class CadastroComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    //this.user.admin = false;
   }
 
   conferirSenha(event: any) {
     this.senha = event.target.value
+  }
+
+  toggleVisibility(e:any){
+    //this.user.admin = e.target.checked;
   }
 
   cadastrar() {
