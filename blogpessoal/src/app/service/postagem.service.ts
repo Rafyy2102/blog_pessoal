@@ -16,11 +16,15 @@ export class PostagemService {
   }
 
   getAllPostagens(): Observable<Postagem[]> {
-    return this.http.get<Postagem[]>('http://localhost:9000/postagens', this.token)
+    return this.http.get<Postagem[]>('http://localhost:9000/postagens')
   }
 
   getByIdPostagem(id: number) : Observable<Postagem>{
-    return this.http.get<Postagem>(`http://localhost:9000/postagens/${id}`, this.token)
+    return this.http.get<Postagem>(`http://localhost:9000/postagens/${id}`)
+  }
+
+  getByTituloPostagem(titulo: string): Observable<Postagem> {
+    return this.http.get<Postagem>(`http://localhost:9000/postagens/titulo/${titulo}`)
   }
 
   postPostagem(postagem: Postagem) : Observable<Postagem> {

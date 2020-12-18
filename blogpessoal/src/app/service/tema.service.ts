@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Tema } from '../model/Tema';
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -16,11 +15,11 @@ export class TemaService {
   }
 
   getAllTemas(): Observable<Tema[]> {
-    return this.http.get<Tema[]>('http://localhost:9000/tema', this.token)
+    return this.http.get<Tema[]>('http://localhost:9000/tema')
   }
 
   getByIdTema(id: number): Observable<Tema> {
-    return this.http.get<Tema>(`http://localhost:9000/tema/${id}`, this.token)
+    return this.http.get<Tema>(`http://localhost:9000/tema/${id}`)
   }
 
   postTema(tema: Tema): Observable<Tema> {
