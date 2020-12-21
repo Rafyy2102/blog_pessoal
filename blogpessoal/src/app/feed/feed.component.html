@@ -8,26 +8,26 @@
                         <app-perfil-lateral></app-perfil-lateral>
                     </div>
 
-                    <div class="col-md-8">
+                    <div class="col-md-8 mt-5">
                         <div><!--*ngIf="auth.userAdmin()"-->
-                            <h3 class="text-center text-monospace mb-4 text-white"> Como tem sido Minha experiencia
+                            <h3 class="text-center text-monospace mb-4"> Como tem sido Minha experiencia
                                 na generation? </h3>
 
                             <div class="form-group">
-                                <label class="text-monospace text-white" for="titulo">Título</label>
+                                <label class="text-monospace" for="titulo">Título</label>
                                 <input type="text" class="form-control" id="titulo"
                                     placeholder="Digite aqui o seu título" [(ngModel)]='postagem.titulo'>
                             </div>
 
                             <div class="form-group">
-                                <label class="text-monospace text-white" for="texto">Texto</label>
+                                <label class="text-monospace" for="texto">Texto</label>
                                 <textarea class="form-control" id="texto" rows="3" placeholder="Digite aqui o seu texto"
                                     [(ngModel)]='postagem.texto'></textarea>
                             </div>
 
                             <div class="row d-flex align-items-end">
                                 <div class="col-md-6">
-                                    <label class="text-monospace text-white" for="tema">Escolha um tema ou <a
+                                    <label class="text-monospace" for="tema">Escolha um tema ou <a
                                             routerLink="/cadastro-tema">Cadastre um novo</a></label>
                                     <select name="tema" id="tema" class="form-control" [(ngModel)]='idTema'
                                         (change)='findByIdTema()'>
@@ -73,7 +73,7 @@
                                 </div>
                                 <div class="col-md-12">
 
-                                    <div class=" mt-5 mb-5 " style="background-color: white;"
+                                    <div class=" mt-5 mb-5 "
                                         *ngFor='let item of listaPostagens | orderBy: key : reverse'>
                                         <div *ngIf="item.ativo" class="p-3">
 
