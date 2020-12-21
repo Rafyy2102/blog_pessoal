@@ -19,8 +19,8 @@
 
           <hr>
 
-          <div class="row">
-              <div class="col-md-5">
+          <div class="row mt-5">
+              <div class="col-md-12">
                   <h4 class="tet-center text-monospace">Lista de temas</h4>
               </div>
           </div>
@@ -38,9 +38,9 @@
                   <th scope="row">{{item.id}}</th>
                   <td>{{item.descricao}}</td>
                   <td class="d-flex justify-content-end">
-                      <a class="btn btn-outline-info mr-3" [routerLink]="['/editar-tema',item.id]">Editar</a>
+                      <a class="btn btn-outline-info mr-3"[routerLink]="['/editar-tema',item.id]">Editar</a>
 
-                      <a class="btn btn-outline-danger" [routerLink]="['/delete-tema', item.id]">Apagar</a>
+                      <a class="btn btn-outline-danger"[routerLink]="['/delete-tema', item.id]">Apagar</a>
                   </td>
                 </tr>
 

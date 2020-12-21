@@ -4,15 +4,14 @@
             <div class="container bg-color w-100">
 
                 <div class="row">
-                    <!--Perfil-->
-                    <div class="col-md-4 mt-5 mb-5">
+                    <div class="col-md-4">
                         <app-perfil-lateral></app-perfil-lateral>
                     </div>
-                    <!--/Perfil-->
+
                     <div class="col-md-8">
-                        <div>
-                            <h3 class="text-center text-monospace mb-4 text-white"> Como tem sido Minha experiencia na
-                                generation? </h3>
+                        <div><!--*ngIf="auth.userAdmin()"-->
+                            <h3 class="text-center text-monospace mb-4 text-white"> Como tem sido Minha experiencia
+                                na generation? </h3>
 
                             <div class="form-group">
                                 <label class="text-monospace text-white" for="titulo">Título</label>
@@ -90,7 +89,7 @@
                                                         'HH:mm'}}</small>
                                                 </div>
                                                 <div class="col-md-12 d-flex justify-content-end"
-                                                    *ngIf="auth.userAdmin()">
+                                                    ><!--*ngIf="auth.userAdmin()"-->
 
                                                     <button class="mr-3 btn btn-outline-info"
                                                         [routerLink]="['/editar-post', item.id]">
