@@ -72,7 +72,7 @@ export class FeedComponent implements OnInit {
     if (this.titulo === '') {
       this.findAllPostagens()
     } else {
-      this.postagemService.getByTituloPostagem(this.titulo).subscribe((resp: Postagem[] | any) => { this.listaPostagens = resp })
+      this.postagemService.getByTituloPostagem(this.titulo).subscribe((resp: Postagem[]|any) => { this.listaPostagens = resp })
     } 
   }
 }
