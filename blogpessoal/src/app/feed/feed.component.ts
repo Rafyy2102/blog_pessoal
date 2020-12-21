@@ -65,14 +65,14 @@ export class FeedComponent implements OnInit {
   }
 
   findByIdTema() {
-    this.temaService.getByIdTema(this.idTema).subscribe((resp: Tema | any) => { this.tema = resp })
+    this.temaService.getByIdTema(this.idTema).subscribe((resp: Tema ) => { this.tema = resp })
   }
 
   findByTituloPostagem() {
     if (this.titulo === '') {
       this.findAllPostagens()
     } else {
-      this.postagemService.getByTituloPostagem(this.titulo).subscribe((resp: Postagem[]|any) => { this.listaPostagens = resp })
+      this.postagemService.getByTituloPostagem(this.titulo).subscribe((resp: Postagem[]) => { this.listaPostagens = resp })
     } 
   }
 }
