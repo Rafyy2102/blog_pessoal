@@ -7,6 +7,7 @@ import { faUser } from '@fortawesome/free-regular-svg-icons'
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
 import { faKey } from '@fortawesome/free-solid-svg-icons'
 import { faLockOpen } from '@fortawesome/free-solid-svg-icons'
+import { AlertasService } from '../service/alertas.service';
 
 
 @Component({
@@ -16,7 +17,7 @@ import { faLockOpen } from '@fortawesome/free-solid-svg-icons'
 })
 export class CadastroComponent implements OnInit {
   user: User = new User()
-  senha: string   
+  senha: string
 
   faUser = faUser
   faEnvelope = faEnvelope
@@ -25,25 +26,35 @@ export class CadastroComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private router: Router 
+    private router: Router,
+    private alert: AlertasService
   ) { }
 
-  ngOnInit(){
+  ngOnInit() {
+    //this.user.admin = false;
   }
 
-  conferirSenha(event: any){
+  conferirSenha(event: any) {
     this.senha = event.target.value
-  } 
+  }
 
-  cadastrar(){    
-    if(this.senha === this.user.senha){
-     this.authService.cadastrar(this.user).subscribe((resp: User) => {
-      this.user = resp
-      this.router.navigate(['/login'])
-      alert('Usuário cadastrado com sucesso!!')
-     })
-    }else{
-      alert('A senha não conferem!!')
+  toggleVisibility(e:any){
+    //this.user.admin = e.target.checked;
+  }
+
+  cadastrar() {
+    if (this.senha === this.user.senha) {
+      this.authService.cadastrar(this.user).subscribe((resp: User) => {
+        this.user = resp
+        this.router.navigate(['/login'])
+        this.alert.showAlertSuccess('Usuário cadastrado com sucesso!!')
+      }, err => {       
+        if (err.status==400) {
+          this.alert.showAlertWarning("usuario ja cadastrado")
+        }
+      })
+    } else {
+      this.alert.showAlertDanger('A senha não conferem!!')
     }
   }
 }

@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PerfilLateralComponent implements OnInit {
 <<<<<<< HEAD
+<<<<<<< HEAD
    
   constructor() { }
 
@@ -18,5 +19,12 @@ export class PerfilLateralComponent implements OnInit {
 
   ngOnInit(): void {
 >>>>>>> 584b50bd109540b94073c5c187ac79d324993cfa
+=======
+
+  constructor() { }
+
+  ngOnInit() {
+
+>>>>>>> blogpessoal1.0.16
   }
 }

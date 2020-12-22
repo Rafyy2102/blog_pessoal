@@ -8,7 +8,11 @@ import { HttpClientModule } from '@angular/common/http';
 =======
 import { FormsModule } from '@angular/forms';
 import { OrderModule } from 'ngx-order-pipe';
+<<<<<<< HEAD
 >>>>>>> blogpessoal1.0.14
+=======
+import { ModalModule } from 'ngx-bootstrap/modal';
+>>>>>>> blogpessoal1.0.16
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -26,7 +30,15 @@ import { CadastroComponent } from './cadastro/cadastro.component';
 >>>>>>> 584b50bd109540b94073c5c187ac79d324993cfa
 =======
 import { PostarTemaComponent } from './postar-tema/postar-tema.component';
+<<<<<<< HEAD
 >>>>>>> blogpessoal1.0.14
+=======
+import { PutPostagemComponent } from './put-postagem/put-postagem.component';
+import { PutTemaComponent } from './put-tema/put-tema.component';
+import { DeleteTemaComponent } from './delete-tema/delete-tema.component';
+import { DeletePostagemComponent } from './delete-postagem/delete-postagem.component';
+import { AlertasComponent } from './alertas/alertas.component';
+>>>>>>> blogpessoal1.0.16
 
 @NgModule({
   declarations: [
@@ -45,8 +57,17 @@ import { PostarTemaComponent } from './postar-tema/postar-tema.component';
 >>>>>>> 584b50bd109540b94073c5c187ac79d324993cfa
 =======
     CadastroComponent,
+<<<<<<< HEAD
     PostarTemaComponent
 >>>>>>> blogpessoal1.0.14
+=======
+    PostarTemaComponent,
+    PutPostagemComponent,
+    PutTemaComponent,
+    DeleteTemaComponent,
+    DeletePostagemComponent,
+    AlertasComponent
+>>>>>>> blogpessoal1.0.16
   ],
   imports: [
     BrowserModule,
@@ -61,8 +82,13 @@ import { PostarTemaComponent } from './postar-tema/postar-tema.component';
 =======
     HttpClientModule,  
     FormsModule,  
+<<<<<<< HEAD
     OrderModule 
 >>>>>>> blogpessoal1.0.14
+=======
+    OrderModule,
+    ModalModule.forRoot()
+>>>>>>> blogpessoal1.0.16
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,34 +1,33 @@
 /* footer social icons */
-
 ul.social-network {
     list-style: none;
     display: inline;
   
     padding: 0;
-  }
+}
   
-  ul.social-network li {
-    display: inline;
-    margin: 0;
-    padding: 5px;
-  }
+ul.social-network li {
+  display: inline;
+  margin: 0;
+  padding: 5px;
+}
   
-  .faFacebook, .faLinkedin, .faInstagram, .faGithub{
-      color: white;
-  }
+.faFacebook, .faLinkedin, .faInstagram, .faGithub{
+  color: white;
+}
   
-  .faFacebook:hover{
-    color: #3b5998;
-  }
+.faFacebook:hover{
+  color: #3b5998;
+}
   
-  .faLinkedin:hover{
+.faLinkedin:hover{
   color: #0072b1;
-  }
+}
   
-  .faInstagram:hover{
+.faInstagram:hover{
   color: #C13584;
-  }
+}
 
-  .faGithub:hover{
-    color: #000608;
-    }  
+.faGithub:hover{
+  color: #000608;
+}  
