@@ -32,7 +32,7 @@ export class PostarTemaComponent implements OnInit {
   }
 
   findByIdTema() {
-    this.temaService.getByIdTema(this.tema.id).subscribe((resp: Tema | any) => {
+    this.temaService.getByIdTema(this.tema.id).subscribe((resp: Tema) => {
       this.tema = resp
     })
   }
