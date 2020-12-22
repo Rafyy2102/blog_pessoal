@@ -22,6 +22,7 @@ export class FeedComponent implements OnInit {
   tema: Tema = new Tema()
   listaTemas: Tema[]
   idTema: number
+  nomeTema: string
 
   constructor(
     private postagemService: PostagemService,
@@ -31,9 +32,8 @@ export class FeedComponent implements OnInit {
 
   ngOnInit() {
     window.scroll(0, 0)
-
     this.findAllPostagens()
-    this.findAllTemas()
+    this.findAllTemas()    
   }
 
   findAllPostagens() {
@@ -72,7 +72,17 @@ export class FeedComponent implements OnInit {
     if (this.titulo === '') {
       this.findAllPostagens()
     } else {
-      this.postagemService.getByTituloPostagem(this.titulo).subscribe((resp: Postagem[]) => { this.listaPostagens = resp })
+      this.postagemService.getByTituloPostagem(this.titulo).subscribe((resp: Postagem[]) => { this.listaPostagens = resp 
+      })
     } 
+  }
+
+  findByNomeTema(){
+    if(this.nomeTema === ''){
+      this.findAllTemas()
+    }else{
+      this.temaService.getByNomeTema(this.nomeTema).subscribe((resp: Tema[]) => 
+      this.listaTemas = resp
+      )}
   }
 }
