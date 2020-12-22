@@ -1,5 +1,4 @@
 import { TestBed } from '@angular/core/testing';
-
 import { TemaService } from './tema.service';
 
 describe('TemaService', () => {

@@ -6,7 +6,6 @@ import { faUserAlt } from '@fortawesome/free-solid-svg-icons'
 import { faKey } from '@fortawesome/free-solid-svg-icons'
 import { AlertasService } from '../service/alertas.service';
 
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',

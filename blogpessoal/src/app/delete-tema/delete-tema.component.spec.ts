@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { DeleteTemaComponent } from './delete-tema.component';
 
 describe('DeleteTemaComponent', () => {

@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { PostarTemaComponent } from './postar-tema.component';
 
 describe('PostarTemaComponent', () => {

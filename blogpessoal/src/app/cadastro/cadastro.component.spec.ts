@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { CadastroComponent } from './cadastro.component';
 
 describe('CadastroComponent', () => {

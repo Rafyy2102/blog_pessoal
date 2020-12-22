@@ -5,26 +5,10 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './perfil-lateral.component.html',
   styleUrls: ['./perfil-lateral.component.css']
 })
-export class PerfilLateralComponent implements OnInit {
-<<<<<<< HEAD
-<<<<<<< HEAD
-   
+export class PerfilLateralComponent implements OnInit {   
   constructor() { }
 
   ngOnInit(){
-   
-=======
 
-  constructor() { }
-
-  ngOnInit(): void {
->>>>>>> 584b50bd109540b94073c5c187ac79d324993cfa
-=======
-
-  constructor() { }
-
-  ngOnInit() {
-
->>>>>>> blogpessoal1.0.16
-  }
+  } 
 }
