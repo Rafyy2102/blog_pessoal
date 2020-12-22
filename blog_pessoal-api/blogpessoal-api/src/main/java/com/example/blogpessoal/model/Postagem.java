@@ -1,6 +1,8 @@
 package com.example.blogpessoal.model;
 
+
 import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -24,12 +26,12 @@ public class Postagem {
 		
 		//o campo titulo não é nulo e o size é o tamanho do campo
 		@NotNull
-		@Size(min = 1, max = 500)
+		@Size(min = 1)
 		private String titulo;
 		
 		//o campo titulo não é nulo e o size é o tamanho do campo
 		@NotNull
-		@Size(min = 1, max = 500)
+		@Size(min = 1)
 		private String texto;
 		
 		//colocar data e hora de acordo com o dia e se auto preenche 

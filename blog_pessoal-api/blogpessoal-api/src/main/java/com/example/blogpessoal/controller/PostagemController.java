@@ -16,9 +16,11 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.blogpessoal.model.Postagem;
 import com.example.blogpessoal.repository.PostagemRepository;
 
-@RestController
-@RequestMapping("/postagens")
+
+
 @CrossOrigin(origins = "*", allowedHeaders = "*")
+@RestController
+@RequestMapping(value="/postagens")
 public class PostagemController {
 	
 	//responsabilidade de instanciar fica com o spring
@@ -34,7 +36,9 @@ public class PostagemController {
 	//findById trazer uma única informação
 	@GetMapping("/{id}")
 	public ResponseEntity<Postagem> GetById(@PathVariable long id){
-		return repository.findById(id).map(resp -> ResponseEntity.ok(resp)).orElse(ResponseEntity.notFound().build());
+		return repository.findById(id)
+				.map(resp -> ResponseEntity.ok(resp))
+				.orElse(ResponseEntity.notFound().build());
 	}
 	
 	//getByTitulo trazer informação por titulo
@@ -57,5 +61,5 @@ public class PostagemController {
 	
 	//end-point delete para excluir dados
 	@DeleteMapping("/{id}")
-	public void delete(@PathVariable long id) {repository.deleteById(id);}
+	public void delete(@PathVariable long id) {	repository.deleteById(id);}
 }

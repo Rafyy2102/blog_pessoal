@@ -9,7 +9,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
-@Table(name = "tb_usuarios")
+@Table(name = "usuarios")
 public class Usuario {
 	
 	@Id
@@ -25,7 +25,7 @@ public class Usuario {
 	private String usuario;
 	
 	@NotNull
-	@Size(min = 1, max = 150)
+	@Size(min = 1)
 	private String senha;
 
 	public long getId() {return id;}

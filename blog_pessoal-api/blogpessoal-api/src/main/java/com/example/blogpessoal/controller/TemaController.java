@@ -16,9 +16,12 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.blogpessoal.model.Tema;
 import com.example.blogpessoal.repository.TemaRepository;
 
+import io.swagger.annotations.Api;
+
 @RestController
-@CrossOrigin(origins = "*", allowedHeaders = "*")
+@CrossOrigin(origins = "*",  allowedHeaders = "*")
 @RequestMapping("/tema")
+@Api(value="API REST Tema")
 public class TemaController {
 	
 	//responsabilidade de intanciar fica com o spring
@@ -34,11 +37,13 @@ public class TemaController {
 	//findById trazer uma única informação
 	@GetMapping("/{id}")
 	public ResponseEntity<Tema> getById(@PathVariable long id){
-		return repository.findById(id).map(resp -> ResponseEntity.ok(resp)).orElse(ResponseEntity.notFound().build());
+		return repository.findById(id)
+				.map(resp -> ResponseEntity.ok(resp))
+				.orElse(ResponseEntity.notFound().build());
 	}
 	
 	//getByTitulo trazer informação por nome	
-	@GetMapping("/nome /{nome}")
+	@GetMapping("/nome/{nome}")
 	public ResponseEntity<List<Tema>> getByName(@PathVariable String nome){
 		return ResponseEntity.ok(repository.findAllByDescricaoContainingIgnoreCase(nome));
 	}
@@ -57,7 +62,5 @@ public class TemaController {
 	
 	//end-point delete para excluir dados
 	@DeleteMapping("/{id}")
-	public  void delete(@PathVariable long id) {
-		repository.deleteById(id);
-	}
+	public  void delete(@PathVariable long id) {repository.deleteById(id);}
 }

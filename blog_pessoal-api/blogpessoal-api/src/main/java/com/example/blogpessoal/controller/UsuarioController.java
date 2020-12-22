@@ -18,9 +18,12 @@ import com.example.blogpessoal.model.Usuario;
 import com.example.blogpessoal.repository.UsuarioRepository;
 import com.example.blogpessoal.service.UsuarioService;
 
+import io.swagger.annotations.Api;
+
 @RestController
 @CrossOrigin(origins = "*")
 @RequestMapping("/usuarios")
+@Api(value="API REST Usuario")
 public class UsuarioController {
 	
 	//responsabilidade de intanciar fica com o spring
@@ -49,7 +52,7 @@ public class UsuarioController {
 	}	
 	//endpoit Post
 	@PostMapping("/cadastrar")
-	public ResponseEntity<Usuario> post(@RequestBody Usuario usuario){
+	public ResponseEntity<Usuario> Post(@RequestBody Usuario usuario){
 		//validação do usuario para salvar
 		Optional<Usuario> user = usuarioService.CadastrarUsuario(usuario);
 		try {
@@ -60,7 +63,7 @@ public class UsuarioController {
 	}
 	//endpoint Put
 	@PutMapping
-	public ResponseEntity<Usuario> put(@RequestBody Usuario usuario) {
+	public ResponseEntity<Usuario> Put(@RequestBody Usuario usuario) {
 		return ResponseEntity.ok(repository.save(usuario));
 	}
 }
