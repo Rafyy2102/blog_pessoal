@@ -2,13 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from '../model/User';
 import { AuthService } from '../service/auth.service';
-
 import { faUser } from '@fortawesome/free-regular-svg-icons'
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
 import { faKey } from '@fortawesome/free-solid-svg-icons'
 import { faLockOpen } from '@fortawesome/free-solid-svg-icons'
 import { AlertasService } from '../service/alertas.service';
-
 
 @Component({
   selector: 'app-cadastro',
@@ -18,6 +16,7 @@ import { AlertasService } from '../service/alertas.service';
 export class CadastroComponent implements OnInit {
   user: User = new User()
   senha: string
+  tipoUse: string
 
   faUser = faUser
   faEnvelope = faEnvelope
@@ -31,26 +30,28 @@ export class CadastroComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    //this.user.admin = false;
+    window.scroll(0,0)    
   }
 
   conferirSenha(event: any) {
     this.senha = event.target.value
   }
 
-  toggleVisibility(e:any){
-    //this.user.admin = e.target.checked;
+  tipoUser(event: any){
+    this.tipoUse = event.target.value
   }
 
   cadastrar() {
-    if (this.senha === this.user.senha) {
+    this.user.tipo = this.tipoUse
+
+    if (this.senha == this.user.senha) {
       this.authService.cadastrar(this.user).subscribe((resp: User) => {
         this.user = resp
         this.router.navigate(['/login'])
         this.alert.showAlertSuccess('Usuário cadastrado com sucesso!!')
       }, err => {       
-        if (err.status==400) {
-          this.alert.showAlertWarning("usuario ja cadastrado")
+        if (err.status == 400) {
+          this.alert.showAlertWarning("Usuário já cadastrado")
         }
       })
     } else {

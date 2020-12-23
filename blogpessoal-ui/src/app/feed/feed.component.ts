@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment.prod';
 import { Postagem } from '../model/Postagem';
 import { Tema } from '../model/Tema';
 import { AlertasService } from '../service/alertas.service';
@@ -35,13 +36,17 @@ export class FeedComponent implements OnInit {
   ngOnInit() {
     window.scroll(0, 0)    
     this.findAllPostagens()
-    this.findAllTemas()   
+    this.findAllTemas()       
     
-    let token = localStorage.getItem('token')
-    if(token == null){
+    
+    if(environment.token == ''){
+      this.router.navigate(['/login'])
+    }
+
+    /*if(token == null){
       this.router.navigate(['/login'])
       this.alert.showAlertWarning("Faça login para ter acesso ao Feed")
-    }
+    }*/
     
   }
 
