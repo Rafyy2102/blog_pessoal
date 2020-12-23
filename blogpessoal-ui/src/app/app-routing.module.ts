@@ -11,11 +11,12 @@ import { PutPostagemComponent } from './put-postagem/put-postagem.component';
 import { PutTemaComponent } from './put-tema/put-tema.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full'},
-  { path: 'home', component: HomeComponent},
-  { path: 'feed', component: FeedComponent},
+  { path: '', redirectTo: 'login', pathMatch: 'full'},
+
   { path: 'login', component: LoginComponent},
   { path: 'cadastro', component: CadastroComponent},
+  { path: 'home', component: HomeComponent},
+  { path: 'feed', component: FeedComponent}, 
   { path: 'cadastro-tema', component: PostarTemaComponent},
   { path: 'editar-post/:id', component: PutPostagemComponent},
   { path: 'delete-post/:id', component: DeletePostagemComponent},

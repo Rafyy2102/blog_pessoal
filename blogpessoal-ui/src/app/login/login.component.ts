@@ -32,6 +32,7 @@ export class LoginComponent implements OnInit {
     this.authService.logar(this.userLogin).subscribe((resp: UserLogin) => {
       this.userLogin = resp
       environment.token = this.userLogin.token
+      environment.nome = this.userLogin.nome
       environment.tipo = this.userLogin.tipo
       this.router.navigate(['/feed'])
     }, err => {

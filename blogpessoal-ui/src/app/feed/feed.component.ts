@@ -36,18 +36,7 @@ export class FeedComponent implements OnInit {
   ngOnInit() {
     window.scroll(0, 0)    
     this.findAllPostagens()
-    this.findAllTemas()       
-    
-    
-    if(environment.token == ''){
-      this.router.navigate(['/login'])
-    }
-
-    /*if(token == null){
-      this.router.navigate(['/login'])
-      this.alert.showAlertWarning("Faça login para ter acesso ao Feed")
-    }*/
-    
+    this.findAllTemas()    
   }
 
   findAllPostagens() {
