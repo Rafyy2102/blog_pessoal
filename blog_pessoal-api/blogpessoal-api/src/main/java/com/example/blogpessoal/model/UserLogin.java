@@ -7,6 +7,8 @@ public class UserLogin {
 	private String senha;
 	//chave de acesso para o usuario
 	private String token;
+	private String tipo;
+	
 	
 	public String getNome() {return nome;}
 	public void setNome(String nome) {this.nome = nome;}
@@ -16,5 +18,6 @@ public class UserLogin {
 	public void setSenha(String senha) {this.senha = senha;}
 	public String getToken() {return token;}
 	public void setToken(String token) {this.token = token;}
-
+	public String getTipo() {return tipo;}
+	public void setTipo(String token) {this.tipo = tipo;}
 }
