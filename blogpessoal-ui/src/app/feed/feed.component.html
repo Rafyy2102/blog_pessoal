@@ -24,8 +24,7 @@
 
         <div class="col-md-6">
           <div class="form-group m-0">
-            <label class="text-monospace" for="tema">Escolha um tema ou <a routerLink='/cadastro-tema'>Cadastre um
-                novo</a>
+            <label class="text-monospace" for="tema">Escolha um tema ou <a routerLink='/cadastro-tema'>Cadastre um novo</a>
             </label>
             <select name="tema" id='tema' class="form-control" [(ngModel)]='idTema' (change)='findByIdTema()'>
               <option *ngFor='let item of listaTemas' value={{item.id}}>

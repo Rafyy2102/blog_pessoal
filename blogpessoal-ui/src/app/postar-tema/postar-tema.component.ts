@@ -22,16 +22,12 @@ export class PostarTemaComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    if(environment.token == ''){
-      this.router.navigate(['/login'])
-    }
-
-    /*if(environment.tipo != 'adm'){
-      this.alert.showAlertWarning('Você precisa ser administrador para ter acesso ao temas')
-      this.router.navigate(['/feed'])
-    }*/
     this.findAllTemas()
     this.findByIdTema()
+
+    if(environment.token == ''){
+      this.router.navigate(['/login'])
+    }  
   }
 
   findAllTemas() {

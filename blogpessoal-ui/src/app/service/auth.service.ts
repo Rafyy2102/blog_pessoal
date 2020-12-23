@@ -33,9 +33,12 @@ export class AuthService {
     let ok: boolean = false 
     if (environment.token != '') { ok = true } return ok }
 
-    btnLogin() {
-      let ok = false
-      let token = environment.token
-  
-      if (token == '') { ok = true } return ok }
+  btnLogin() {
+    let ok = false
+    let token = environment.token  
+    if (token == '') { ok = true } return ok }
+
+  /*adm(){
+    let ok: boolean = false 
+    if (environment.tipo == 'adm') { ok = true } return ok } */
 }

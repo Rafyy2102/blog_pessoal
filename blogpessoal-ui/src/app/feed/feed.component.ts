@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment.prod';
 import { Postagem } from '../model/Postagem';
 import { Tema } from '../model/Tema';
 import { AlertasService } from '../service/alertas.service';
+import { AuthService } from '../service/auth.service';
 import { PostagemService } from '../service/postagem.service';
 import { TemaService } from '../service/tema.service';
 
@@ -30,13 +31,19 @@ export class FeedComponent implements OnInit {
     private postagemService: PostagemService,
     private temaService: TemaService,
     private alert: AlertasService,
+    public authService: AuthService,
     private router: Router
   ) { }
 
   ngOnInit() {
     window.scroll(0, 0)    
     this.findAllPostagens()
-    this.findAllTemas()    
+    this.findAllTemas()   
+    
+    /*if(environment.tipo != 'adm'){
+      this.alert.showAlertWarning('Você precisa ser administrador para ter acesso ao temas')
+      this.router.navigate(['/home'])
+    }*/  
   }
 
   findAllPostagens() {
