@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment.prod';
 import { Tema } from '../model/Tema';
 import { AlertasService } from '../service/alertas.service';
 import { TemaService } from '../service/tema.service';
@@ -23,6 +24,10 @@ export class PostarTemaComponent implements OnInit {
   ngOnInit() {
     this.findAllTemas()
     this.findByIdTema()
+
+    if(environment.token == ''){
+      this.router.navigate(['/login'])
+    }
   }
 
   findAllTemas() {

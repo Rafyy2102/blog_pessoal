@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Postagem } from '../model/Postagem';
 import { Tema } from '../model/Tema';
 import { AlertasService } from '../service/alertas.service';
+import { AuthService } from '../service/auth.service';
 import { PostagemService } from '../service/postagem.service';
 import { TemaService } from '../service/tema.service';
 
@@ -27,13 +29,15 @@ export class FeedComponent implements OnInit {
   constructor(
     private postagemService: PostagemService,
     private temaService: TemaService,
-    private alert: AlertasService
+    private alert: AlertasService,
+    public authService: AuthService,
+    private router: Router
   ) { }
 
   ngOnInit() {
     window.scroll(0, 0)
     this.findAllPostagens()
-    this.findAllTemas()    
+    this.findAllTemas()
   }
 
   findAllPostagens() {
@@ -65,24 +69,26 @@ export class FeedComponent implements OnInit {
   }
 
   findByIdTema() {
-    this.temaService.getByIdTema(this.idTema).subscribe((resp: Tema ) => { this.tema = resp })
+    this.temaService.getByIdTema(this.idTema).subscribe((resp: Tema) => { this.tema = resp })
   }
 
   findByTituloPostagem() {
-    if (this.titulo === '') {
+    if (this.titulo == '') {
       this.findAllPostagens()
     } else {
-      this.postagemService.getByTituloPostagem(this.titulo).subscribe((resp: Postagem[]) => { this.listaPostagens = resp 
+      this.postagemService.getByTituloPostagem(this.titulo).subscribe((resp: Postagem[]) => {
+        this.listaPostagens = resp
       })
-    } 
+    }
   }
 
-  findByNomeTema(){
-    if(this.nomeTema === ''){
+  findByNomeTema() {
+    if (this.nomeTema == '') {
       this.findAllTemas()
-    }else{
-      this.temaService.getByNomeTema(this.nomeTema).subscribe((resp: Tema[]) => 
-      this.listaTemas = resp
-      )}
+    } else {
+      this.temaService.getByNomeTema(this.nomeTema).subscribe((resp: Tema[]) =>
+        this.listaTemas = resp
+      )
+    }
   }
 }

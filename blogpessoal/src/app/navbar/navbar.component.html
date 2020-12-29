@@ -8,30 +8,40 @@
         <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
             <ul class="navbar-nav mr-auto">
 
-                <li class="nav-item">
-                    <a class="nav-link texto text-monospace text-uppercase font-weight-bold p-3" routerLink='/home'>Home
-                        <span class="sr-only">(página atual)</span></a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link texto text-monospace text-uppercase font-weight-bold p-3" routerLink='/feed'>Feed</a>
-                </li>
-
-                <div *ngIf='auth.btnLogin()'>
+                <div>
                     <li class="nav-item">
-                        <a class="nav-link texto text-monospace text-uppercase font-weight-bold p-3" routerLink='/login'>Login</a>
+                        <p class="texto text-monospace text-uppercase font-weight-bold m-0 font-weight-bold p-3 text-black text-uppercase  fs-20">
+                        Olá, {{nome}}</p>
                     </li>
                 </div>
 
                 <div *ngIf='auth.btnLogin()'>
                     <li class="nav-item">
-                        <a class="nav-link texto text-monospace text-uppercase font-weight-bold p-3"  routerLink='/cadastro'>Cadastro</a>
+                      <a class="nav-link texto text-monospace text-uppercase font-weight-bold p-3" routerLink='/login'>Login</a>
+                    </li>
+                  </div>
+          
+                  <div *ngIf='auth.btnLogin()'>
+                    <li class="nav-item">
+                      <a class="nav-link texto text-monospace text-uppercase font-weight-bold p-3" routerLink='/cadastro'>Cadastro</a>
+                    </li>
+                  </div>
+
+                <div>
+                    <li class="nav-item">
+                        <a class="nav-link texto text-monospace text-uppercase font-weight-bold p-3" routerLink='/home'>Home</a>
                     </li>
                 </div>
 
-                <div *ngIf='auth.btnSair()'>
+                <div>
                     <li class="nav-item">
-                        <a class="nav-link texto text-monospace text-uppercase font-weight-bold p-3" (click)='sair()'>Sair</a>
+                        <a class="nav-link texto text-monospace text-uppercase font-weight-bold p-3"  routerLink='/feed'>Feed</a>
+                    </li>
+                </div>
+
+                <div>
+                    <li class="nav-item">
+                        <a class="nav-link texto text-monospace text-uppercase font-weight-bold p-3" (click)=' sair()'>Sair</a>
                     </li>
                 </div>
             </ul>

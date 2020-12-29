@@ -30,17 +30,14 @@ export class CadastroComponent implements OnInit {
     private alert: AlertasService
   ) { }
 
-  ngOnInit() {
-    //this.user.admin = false;
+  ngOnInit() { 
+    window.scroll(0,0)   
   }
 
   conferirSenha(event: any) {
     this.senha = event.target.value
   }
-
-  toggleVisibility(e:any){
-    //this.user.admin = e.target.checked;
-  }
+  
 
   cadastrar() {
     if (this.senha === this.user.senha) {
@@ -50,7 +47,7 @@ export class CadastroComponent implements OnInit {
         this.alert.showAlertSuccess('Usuário cadastrado com sucesso!!')
       }, err => {       
         if (err.status==400) {
-          this.alert.showAlertWarning("usuario ja cadastrado")
+          this.alert.showAlertWarning("Usuário já cadastrado")
         }
       })
     } else {

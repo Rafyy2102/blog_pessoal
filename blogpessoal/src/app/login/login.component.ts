@@ -5,6 +5,7 @@ import { AuthService } from '../service/auth.service';
 import { faUserAlt } from '@fortawesome/free-solid-svg-icons'
 import { faKey } from '@fortawesome/free-solid-svg-icons'
 import { AlertasService } from '../service/alertas.service';
+import { environment } from 'src/environments/environment.prod';
 
 
 @Component({
@@ -25,12 +26,14 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    window.scroll(0,0)
   }
 
   entrar() {
     this.authService.logar(this.userLogin).subscribe((resp: UserLogin) => {
       this.userLogin = resp
-      localStorage.setItem('token', this.userLogin.token)
+      environment.token = this.userLogin.token
+      environment.nome = this.userLogin.nome    
       this.router.navigate(['/feed'])
     }, err => {
       if (err.status == 500) {
