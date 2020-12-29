@@ -35,15 +35,9 @@ export class CadastroComponent implements OnInit {
 
   conferirSenha(event: any) {
     this.senha = event.target.value
-  }
-
-  tipoUser(event: any){
-    this.tipoUse = event.target.value
-  }
+  }  
 
   cadastrar() {
-    this.user.tipo = this.tipoUse
-
     if (this.senha == this.user.senha) {
       this.authService.cadastrar(this.user).subscribe((resp: User) => {
         this.user = resp

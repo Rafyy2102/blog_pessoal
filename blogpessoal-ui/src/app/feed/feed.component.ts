@@ -39,11 +39,6 @@ export class FeedComponent implements OnInit {
     window.scroll(0, 0)    
     this.findAllPostagens()
     this.findAllTemas()   
-    
-    /*if(environment.tipo != 'adm'){
-      this.alert.showAlertWarning('Você precisa ser administrador para ter acesso ao temas')
-      this.router.navigate(['/home'])
-    }*/  
   }
 
   findAllPostagens() {
