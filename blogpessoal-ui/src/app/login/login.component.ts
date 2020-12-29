@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
       this.userLogin = resp
       environment.token = this.userLogin.token
       environment.nome = this.userLogin.nome     
-      this.router.navigate(['/feed'])
+      this.router.navigate(['/home'])
     }, err => {
       if (err.status == 500) {
         this.alert.showAlertWarning("Usuário/Senha não confere!!")

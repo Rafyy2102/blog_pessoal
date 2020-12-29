@@ -15,8 +15,7 @@ import { AlertasService } from '../service/alertas.service';
 })
 export class CadastroComponent implements OnInit {
   user: User = new User()
-  senha: string
-  tipoUse: string
+  senha: string 
 
   faUser = faUser
   faEnvelope = faEnvelope
